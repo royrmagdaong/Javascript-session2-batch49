@@ -10,11 +10,15 @@
 </head>
 <body>
     
-    <h1 id="hello-world">Hello World 2</h1>
-    <p class="test">test</p>
-    <p class="test">test</p>
-    <p class="test">test</p>
-    <div class="test">TEst</div>
+    <header>
+        <div class="menu" onclick="toggleMenu()"></div>
+    </header>
+
+    <div id="sidebar">
+
+    </div>
+    
+
     <script>
         // let x = false; // number
         // let y = "2";
@@ -50,7 +54,7 @@
         // console.log( (x>y || y>x) && !(y<=x || y>=x) ) // true false = false
 
 
-        let x = 3;
+        // let x = 3;
 
         // if(x < 4){
         //     console.log('1')
@@ -202,9 +206,29 @@
         // h1.style.backgroundColor = "#ff0000"
         // console.log(h1)
 
-        const p = document.getElementsByClassName("test")
+        // const p = document.getElementsByClassName("test")
+        // p[1].style.backgroundColor = "green"
+        
+        const menu = document.getElementsByClassName("menu")
+        const sidebar = document.getElementById("sidebar")
 
-        p[1].style.backgroundColor = "green"
+        let toggle = true;
+        
+        // menu[0].addEventListener("click", toggleMenu)
+
+        function toggleMenu(){
+            console.log('sidebar', sidebar.style)
+            console.log('Hello world')
+
+            if(toggle){
+                sidebar.style.display = "none"
+            }else{
+                sidebar.style.display = ""
+            }
+            
+            toggle = !toggle
+        }
+
     </script>
 </body>
 </html>

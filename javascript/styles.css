@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+
+header{
+    height: 80px;
+    background-color: aquamarine;
+    position: relative;
+}
+.menu{
+    width: 40px;
+    height: 40px;
+    background-color: #383838;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.menu:hover{
+    cursor: pointer;
+    background-color: #f8fafa;
+}
+
+#sidebar{
+    width: 400px;
+    height: 100vh;
+    background-color: bisque;
+}
