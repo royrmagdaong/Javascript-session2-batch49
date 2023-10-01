@@ -16,11 +16,11 @@
 
     <div id="sidebar"></div> -->
 
-    <label for="weight">weight: </label>
+    <!-- <label for="weight">weight: </label>
     <input id="weight" type="number" name="weight"> <br>
     <label for="height">height: </label>
     <input id="height" type="number" name="height"><br>
-    <button id="compute">compute</button>
+    <button id="compute">compute</button> -->
     
     
 
@@ -234,55 +234,68 @@
         //     toggle = !toggle
         // }
 
-        const weight = document.querySelector("#weight")
-        const height = document.querySelector("#height")
-        const computeButton = document.querySelector("#compute")
-        // console.log(weight)
-        // console.log(height)
-        // console.log(computeButton)
+        // const weight = document.querySelector("#weight")
+        // const height = document.querySelector("#height")
+        // const computeButton = document.querySelector("#compute")
+        // // console.log(weight)
+        // // console.log(height)
+        // // console.log(computeButton)
 
-        weight.addEventListener("change", function(){
-            const body = document.querySelector("#body")
-            const weightError = document.createElement('p')
-            weightError.style.color = '#ff000099'
-            weightError.style.fontSize = '11px'
-            weightError.textContent = "weight should be > 40 and < 300!"
+        // weight.addEventListener("change", function(){
+        //     const body = document.querySelector("#body")
+        //     const weightError = document.createElement('p')
+        //     weightError.style.color = '#ff000099'
+        //     weightError.style.fontSize = '11px'
+        //     weightError.textContent = "weight should be > 40 and < 300!"
             
-            if(weight.value <= 300 && weight.value >= 40){
-                // body.removeChild(weightError)
-            }else{
-                weight.insertAdjacentElement("afterend", weightError)
-            }
-        })
+        //     if(weight.value <= 300 && weight.value >= 40){
+        //         // body.removeChild(weightError)
+        //     }else{
+        //         weight.insertAdjacentElement("afterend", weightError)
+        //     }
+        // })
 
-        computeButton.addEventListener("click", function(){
-            const body = document.querySelector("#body")
-            const h2 = document.createElement("h2")
+        // computeButton.addEventListener("click", function(){
+        //     const body = document.querySelector("#body")
+        //     const h2 = document.createElement("h2")
 
-            console.log('Compute button', computeButton)
+        //     console.log('Compute button', computeButton)
 
-            // console.log('Weight', weight.value)
-            // console.log('Height', height.value)
+        //     // console.log('Weight', weight.value)
+        //     // console.log('Height', height.value)
 
-            let _weight = weight.value
-            let _height = height.value
+        //     let _weight = weight.value
+        //     let _height = height.value
 
-            let BMI = _weight / (_height) * (_height)
-            // console.log("BMI", BMI)
+        //     let BMI = _weight / (_height) * (_height)
+        //     // console.log("BMI", BMI)
 
-            h2.textContent = BMI
-            // h2.style.position = "fixed";
-            // h2.style.top = "50px";
-            h2.style.textAlign = "center";
-            h2.style.backgroundColor = "#00ff0055"
+        //     h2.textContent = BMI
+        //     // h2.style.position = "fixed";
+        //     // h2.style.top = "50px";
+        //     h2.style.textAlign = "center";
+        //     h2.style.backgroundColor = "#00ff0055"
 
-            // body.appendChild(h2)
-            computeButton.insertAdjacentElement("beforebegin", h2)
+        //     // body.appendChild(h2)
+        //     computeButton.insertAdjacentElement("beforebegin", h2)
 
-            setTimeout(function(){
-                body.removeChild(h2)
-            }, 3000)
+        //     setTimeout(function(){
+        //         body.removeChild(h2)
+        //     }, 3000)
 
+        // })
+
+        fetch('https://pokeapi.co/api/v2/pokemon').then(function(response){
+            return response.json()
+        }).then(function(data){
+            console.log(data)
+            // const h1 = document.createElement('h1')
+            // const body = document.querySelector('#body')
+            // h1.textContent = data.name
+            // body.appendChild(h1)
+
+        }).catch(function(error){
+            console.log(error)
         })
 
     </script>
