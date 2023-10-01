@@ -163,6 +163,33 @@
 
         // console.log(addNumbers(1, 2))
         
+
+        let car = {
+            plateNumber: "ABC123",
+            numberOfWheel: 4,
+            color: "Red",
+            passengers: ["john","peter","doe"],
+            drive: function(){
+                console.log('Driving....')
+            },
+            break: function(){
+                console.log('Break!')
+            },
+            getPlateNumber: function(){
+                return car.plateNumber;
+            },
+            
+        }
+        car.drive()
+        console.log(car.numberOfWheel)
+        car.numberOfWheel = 8
+        console.log(car.numberOfWheel)
+
+        console.log("driver", car.driver)
+        car.driver = "Roy"
+        console.log("driver", car.driver)
+
+        console.log("Plate Number: ", car.getPlateNumber())
     </script>
 </body>
 </html>
