@@ -10,8 +10,11 @@
 </head>
 <body>
     
-    <h1>Hello World 2</h1>
-    <p>test</p>
+    <h1 id="hello-world">Hello World 2</h1>
+    <p class="test">test</p>
+    <p class="test">test</p>
+    <p class="test">test</p>
+    <div class="test">TEst</div>
     <script>
         // let x = false; // number
         // let y = "2";
@@ -164,32 +167,44 @@
         // console.log(addNumbers(1, 2))
         
 
-        let car = {
-            plateNumber: "ABC123",
-            numberOfWheel: 4,
-            color: "Red",
-            passengers: ["john","peter","doe"],
-            drive: function(){
-                console.log('Driving....')
-            },
-            break: function(){
-                console.log('Break!')
-            },
-            getPlateNumber: function(){
-                return car.plateNumber;
-            },
+        // let car = {
+        //     plateNumber: "ABC123",
+        //     numberOfWheel: 4,
+        //     color: "Red",
+        //     passengers: ["john","peter","doe"],
+        //     drive: function(){
+        //         console.log('Driving....')
+        //     },
+        //     break: function(){
+        //         console.log('Break!')
+        //     },
+        //     getPlateNumber: function(){
+        //         return car.plateNumber;
+        //     },
             
-        }
-        car.drive()
-        console.log(car.numberOfWheel)
-        car.numberOfWheel = 8
-        console.log(car.numberOfWheel)
+        // }
+        // car.drive()
+        // console.log(car.numberOfWheel)
+        // car.numberOfWheel = 8
+        // console.log(car.numberOfWheel)
 
-        console.log("driver", car.driver)
-        car.driver = "Roy"
-        console.log("driver", car.driver)
+        // console.log("driver", car.driver)
+        // car.driver = "Roy"
+        // console.log("driver", car.driver)
 
-        console.log("Plate Number: ", car.getPlateNumber())
+        // console.log("Plate Number: ", car.getPlateNumber())
+
+
+        // console.log('DOM', document.body.children[0])
+
+        // const h1 = document.getElementById("hello-world")
+        // h1.textContent = "Hello World"
+        // h1.style.backgroundColor = "#ff0000"
+        // console.log(h1)
+
+        const p = document.getElementsByClassName("test")
+
+        p[1].style.backgroundColor = "green"
     </script>
 </body>
 </html>
