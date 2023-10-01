@@ -8,15 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body>
+<body id="body">
     
-    <header>
+    <!-- <header>
         <div class="menu" onclick="toggleMenu()"></div>
     </header>
 
-    <div id="sidebar">
+    <div id="sidebar"></div> -->
 
-    </div>
+    <label for="weight">weight: </label>
+    <input id="weight" type="number" name="weight"> <br>
+    <label for="height">height: </label>
+    <input id="height" type="number" name="height"><br>
+    <button id="compute">compute</button>
+    
     
 
     <script>
@@ -209,25 +214,76 @@
         // const p = document.getElementsByClassName("test")
         // p[1].style.backgroundColor = "green"
         
-        const menu = document.getElementsByClassName("menu")
-        const sidebar = document.getElementById("sidebar")
+        // const menu = document.getElementsByClassName("menu")
+        // const sidebar = document.getElementById("sidebar")
 
-        let toggle = true;
+        // let toggle = true;
         
         // menu[0].addEventListener("click", toggleMenu)
 
-        function toggleMenu(){
-            console.log('sidebar', sidebar.style)
-            console.log('Hello world')
+        // function toggleMenu(){
+        //     console.log('sidebar', sidebar.style)
+        //     console.log('Hello world')
 
-            if(toggle){
-                sidebar.style.display = "none"
-            }else{
-                sidebar.style.display = ""
-            }
+        //     if(toggle){
+        //         sidebar.style.display = "none"
+        //     }else{
+        //         sidebar.style.display = ""
+        //     }
             
-            toggle = !toggle
-        }
+        //     toggle = !toggle
+        // }
+
+        const weight = document.querySelector("#weight")
+        const height = document.querySelector("#height")
+        const computeButton = document.querySelector("#compute")
+        // console.log(weight)
+        // console.log(height)
+        // console.log(computeButton)
+
+        weight.addEventListener("change", function(){
+            const body = document.querySelector("#body")
+            const weightError = document.createElement('p')
+            weightError.style.color = '#ff000099'
+            weightError.style.fontSize = '11px'
+            weightError.textContent = "weight should be > 40 and < 300!"
+            
+            if(weight.value <= 300 && weight.value >= 40){
+                // body.removeChild(weightError)
+            }else{
+                weight.insertAdjacentElement("afterend", weightError)
+            }
+        })
+
+        computeButton.addEventListener("click", function(){
+            const body = document.querySelector("#body")
+            const h2 = document.createElement("h2")
+
+            console.log('Compute button', computeButton)
+
+            // console.log('Weight', weight.value)
+            // console.log('Height', height.value)
+
+            let _weight = weight.value
+            let _height = height.value
+
+            let BMI = _weight / (_height) * (_height)
+            // console.log("BMI", BMI)
+
+            h2.textContent = BMI
+            // h2.style.position = "fixed";
+            // h2.style.top = "50px";
+            h2.style.textAlign = "center";
+            h2.style.backgroundColor = "#00ff0055"
+
+            // body.appendChild(h2)
+            computeButton.insertAdjacentElement("beforebegin", h2)
+
+            setTimeout(function(){
+                body.removeChild(h2)
+            }, 3000)
+
+        })
 
     </script>
 </body>

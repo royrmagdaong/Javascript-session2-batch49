@@ -1,4 +1,4 @@
-body{
+/* body{
     margin: 0;
 }
 
@@ -24,4 +24,11 @@ header{
     width: 400px;
     height: 100vh;
     background-color: bisque;
+} */
+
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 200px;
+    align-items: center;
 }
